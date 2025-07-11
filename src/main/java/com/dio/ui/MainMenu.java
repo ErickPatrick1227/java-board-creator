@@ -48,9 +48,12 @@ public class MainMenu {
         System.out.println("Seu board terá colunas além das 3 padrões? Se sim informe quantas, senão digite '0'");
         var additionalColumns = scanner.nextInt();
 
-        if (additionalColumns > 0) {
-            System.out.println("Número inválido, o board será criado com as colunas padrão");
+        if (additionalColumns == 0) {
+            System.out.println("o board será criado com as colunas padrão");
             additionalColumns = 0;
+        } else {
+            System.out.printf("O board terá %s colunas adicionais\n", additionalColumns);
+
         }
 
         List<BoardColumnEntity> columns = new ArrayList<>();

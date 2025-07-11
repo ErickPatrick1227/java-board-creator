@@ -1,212 +1,41 @@
-jul. 11, 2025 6:52:04 PM liquibase.changelog
+jul. 11, 2025 7:09:38 PM liquibase.changelog
 INFORMAÇÕES: Reading resource: db/changelog/migrations/db.changelong-202507101452.sql
-jul. 11, 2025 6:52:04 PM liquibase.changelog
+jul. 11, 2025 7:09:38 PM liquibase.changelog
 INFORMAÇÕES: Reading resource: db/changelog/migrations/db.changelong-202507101513.sql
-jul. 11, 2025 6:52:04 PM liquibase.changelog
+jul. 11, 2025 7:09:38 PM liquibase.changelog
 INFORMAÇÕES: Reading resource: db/changelog/migrations/db.changelong-202507101609.sql
-jul. 11, 2025 6:52:04 PM liquibase.changelog
+jul. 11, 2025 7:09:38 PM liquibase.changelog
 INFORMAÇÕES: Reading resource: db/changelog/migrations/db.changelong-202507101610.sql
-jul. 11, 2025 6:52:04 PM liquibase.changelog
+jul. 11, 2025 7:09:38 PM liquibase.changelog
 INFORMAÇÕES: Reading resource: db/changelog/migrations/db.changelong-202507101611.sql
-jul. 11, 2025 6:52:05 PM liquibase.changelog
+jul. 11, 2025 7:09:38 PM liquibase.changelog
 INFORMAÇÕES: Reading from board.DATABASECHANGELOG
-jul. 11, 2025 6:52:05 PM liquibase.lockservice
-INFORMAÇÕES: Successfully acquired change log lock
-jul. 11, 2025 6:52:05 PM liquibase.command
-INFORMAÇÕES: Using deploymentId: 2270725111
-jul. 11, 2025 6:52:05 PM liquibase.changelog
+Database is up to date, no changesets to execute
+jul. 11, 2025 7:09:38 PM liquibase.changelog
 INFORMAÇÕES: Reading from board.DATABASECHANGELOG
-Running Changeset: db/changelog/migrations/db.changelong-202507101611.sql::raw::includeAll
-jul. 11, 2025 6:52:05 PM liquibase.changelog
-GRAVE: ChangeSet db/changelog/migrations/db.changelong-202507101611.sql::raw::includeAll encountered an exception.
-liquibase.exception.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set ' at line 1 [Failed SQL: (1064) ----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set unblock_reason nullable
---
---ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NULL;
---
-----rollback ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NOT NULL;]
-	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:476)
-	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83)
-	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185)
-	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141)
-	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189)
-	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:775)
-	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119)
-	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
-	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:131)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:120)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.Scope.child(Scope.java:257)
-	at liquibase.Scope.child(Scope.java:261)
-	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89)
-	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:113)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:111)
-	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105)
-	at liquibase.command.CommandScope.execute(CommandScope.java:220)
-	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.Liquibase.runInScope(Liquibase.java:1290)
-	at liquibase.Liquibase.update(Liquibase.java:205)
-	at liquibase.Liquibase.update(Liquibase.java:188)
-	at liquibase.Liquibase.update(Liquibase.java:175)
-	at liquibase.Liquibase.update(Liquibase.java:155)
-	at com.dio.persistence.migration.MigrationStrategy.executeMigration(MigrationStrategy.java:35)
-	at com.dio.Main.main(Main.java:15)
-Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set ' at line 1
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
-	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:470)
-	... 40 more
-
 
 UPDATE SUMMARY
 Run:                          0
-Previously run:               4
+Previously run:               5
 Filtered out:                 0
 -------------------------------
 Total change sets:            5
 
-jul. 11, 2025 6:52:05 PM liquibase.util
+jul. 11, 2025 7:09:38 PM liquibase.util
 INFORMAÇÕES: UPDATE SUMMARY
-jul. 11, 2025 6:52:05 PM liquibase.util
+jul. 11, 2025 7:09:38 PM liquibase.util
 INFORMAÇÕES: Run:                          0
-jul. 11, 2025 6:52:05 PM liquibase.util
-INFORMAÇÕES: Previously run:               4
-jul. 11, 2025 6:52:05 PM liquibase.util
+jul. 11, 2025 7:09:38 PM liquibase.util
+INFORMAÇÕES: Previously run:               5
+jul. 11, 2025 7:09:38 PM liquibase.util
 INFORMAÇÕES: Filtered out:                 0
-jul. 11, 2025 6:52:05 PM liquibase.util
+jul. 11, 2025 7:09:38 PM liquibase.util
 INFORMAÇÕES: -------------------------------
-jul. 11, 2025 6:52:05 PM liquibase.util
+jul. 11, 2025 7:09:38 PM liquibase.util
 INFORMAÇÕES: Total change sets:            5
-jul. 11, 2025 6:52:05 PM liquibase.util
+jul. 11, 2025 7:09:38 PM liquibase.util
 INFORMAÇÕES: Update summary generated
-jul. 11, 2025 6:52:05 PM liquibase.command
-INFORMAÇÕES: Update command encountered an exception.
-jul. 11, 2025 6:52:05 PM liquibase.lockservice
+jul. 11, 2025 7:09:38 PM liquibase.lockservice
 INFORMAÇÕES: Successfully released change log lock
-jul. 11, 2025 6:52:05 PM liquibase.command
-INFORMAÇÕES: Logging exception.
-ERROR: Exception Details
-ERROR: Exception Primary Class:  SQLSyntaxErrorException
-ERROR: Exception Primary Reason:  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set ' at line 1
-ERROR: Exception Primary Source:  MySQL 8.0.42
-jul. 11, 2025 6:52:05 PM liquibase.command
+jul. 11, 2025 7:09:38 PM liquibase.command
 INFORMAÇÕES: Command execution complete
-liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/migrations/db.changelong-202507101611.sql::raw::includeAll:
-     Reason: liquibase.exception.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set ' at line 1 [Failed SQL: (1064) ----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set unblock_reason nullable
---
---ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NULL;
---
-----rollback ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NOT NULL;]
-	at liquibase.command.CommandScope.execute(CommandScope.java:258)
-	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.Liquibase.runInScope(Liquibase.java:1290)
-	at liquibase.Liquibase.update(Liquibase.java:205)
-	at liquibase.Liquibase.update(Liquibase.java:188)
-	at liquibase.Liquibase.update(Liquibase.java:175)
-	at liquibase.Liquibase.update(Liquibase.java:155)
-	at com.dio.persistence.migration.MigrationStrategy.executeMigration(MigrationStrategy.java:35)
-	at com.dio.Main.main(Main.java:15)
-Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/migrations/db.changelong-202507101611.sql::raw::includeAll:
-     Reason: liquibase.exception.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set ' at line 1 [Failed SQL: (1064) ----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set unblock_reason nullable
---
---ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NULL;
---
-----rollback ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NOT NULL;]
-	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:148)
-	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:113)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:111)
-	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105)
-	at liquibase.command.CommandScope.execute(CommandScope.java:220)
-	... 12 more
-Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/migrations/db.changelong-202507101611.sql::raw::includeAll:
-     Reason: liquibase.exception.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set ' at line 1 [Failed SQL: (1064) ----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set unblock_reason nullable
---
---ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NULL;
---
-----rollback ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NOT NULL;]
-	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:819)
-	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119)
-	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
-	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:131)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:120)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.Scope.child(Scope.java:257)
-	at liquibase.Scope.child(Scope.java:261)
-	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89)
-	... 20 more
-Caused by: liquibase.exception.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set ' at line 1 [Failed SQL: (1064) ----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set unblock_reason nullable
---
---ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NULL;
---
-----rollback ALTER TABLE BLOCKS MODIFY COLUMN unblock_reason VARCHAR(255) NOT NULL;]
-	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:476)
-	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83)
-	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185)
-	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141)
-	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189)
-	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:775)
-	... 35 more
-Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '----liquibase formatted sql
-----changeset patrick:202507101611
-----comment: set ' at line 1
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
-	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:470)
-	... 40 more
